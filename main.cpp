@@ -1,9 +1,16 @@
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
 #include <string>
 #include <iostream>
 #include <vector>
 #include <list>
 #include <typeinfo>
 #include <algorithm>
+
+struct Leaks {
+    ~Leaks() { _CrtDumpMemoryLeaks(); }
+}_l;
+
 
 using namespace std;
 
